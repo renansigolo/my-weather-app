@@ -1,0 +1,50 @@
+<!-- Loading -->
+<div class="spinner" *ngIf="!isReady">
+  <mat-spinner></mat-spinner>
+  <h1>{{introTxt}}</h1>
+  <a href="https://support.google.com/chrome/answer/142065?hl=en&co=GENIE.Platform%3DDesktop&oco=1" mat-raised-button color="accent" *ngIf="locationState === 'denied'">Let's try again?</a>
+</div>
+
+<!-- Main Page -->
+<div *ngIf="isReady">
+
+  <!-- The video -->
+  <video autoplay muted loop id="bgVideo">
+    <source src="assets/{{weatherIcon(icon)}}.mp4" type="video/mp4">
+  </video>
+
+<div class="content">
+  <!-- Top Icons -->
+  <div>
+    <i class="material-icons">{{iconName}}</i>
+  </div>
+
+  <!-- Toogle -->
+  <div id="toogle-group">
+    <mat-button-toggle-group name="fontStyle" aria-label="Font Style" #tempUnit="matButtonToggleGroup" (change)="convertTemperature($event.value)">
+      <mat-button-toggle value="C" checked>Celsius</mat-button-toggle>
+      <mat-button-toggle value="F">Fahrenheit</mat-button-toggle>
+    </mat-button-toggle-group>
+  </div>
+
+  <!-- Current Temperature -->
+  <div id="main">
+    <i [class]="weatherIcon(icon)"></i>
+    <h1>{{temperature | number: '2.1-1'}}° {{tempUnit.value}}</h1>
+  </div>
+
+  <!-- Weekly Forecast -->
+  <div id="forecast">
+    <mat-card *ngFor="let day of forecast">
+      <i [class]="weatherIcon(day.icon)"></i>
+      <h3>
+        {{ day.time * 1000 | date: 'EEEE' }}
+        <br>
+        {{ day.time * 1000 | date: 'MMM d' }}
+      </h3>
+      <p>{{ day.summary }}</p>
+    </mat-card>
+  </div>
+
+</div>
+</div>
