@@ -16,6 +16,7 @@ Run `yarn build` to build the project.
 
 * [Angular](https://angular.io) - One framework. Mobile & desktop.
 * [Firebase](https://firebase.google.com/) - Firebase helps mobile app teams succeed.
+* [Angular Material](https://material.angular.io/) - Material Design components for Angular
 
 ## Dev tools
 
