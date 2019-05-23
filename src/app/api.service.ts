@@ -8,7 +8,7 @@ import {Observable} from 'rxjs'
 })
 export class ApiService {
 	readonly ROOT_URL =
-		'https://us-central1-my-weather-js.cloudfunctions.net/darkSkyProxy'
+		'https://us-central1-my-weather-js-c472e.cloudfunctions.net/darkSkyProxy'
 
 	constructor(public http: HttpClient) {}
 

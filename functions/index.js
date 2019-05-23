@@ -4,15 +4,15 @@ const cors = require('cors')({origin: true})
 // const firebaseConfig = JSON.parse(process.env.FIREBASE_CONFIG);
 
 exports.darkSkyProxy = functions.https.onRequest((req, res) => {
-	/// Wrap request with cors
+	// Wrap request with cors
 	cors(req, res, () => {
-		/// Get the url params
+		// Get the url params
 		const lat = req.query.lat
 		const lng = req.query.lng
 
 		const url = formatUrl(lat, lng)
 
-		/// Send request to DarkSky
+		// Send request to DarkSky
 		return http
 			.get(url)
 			.then(response => {
