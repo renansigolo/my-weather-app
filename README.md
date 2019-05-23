@@ -4,13 +4,13 @@ A simple weather application.
 
 ## Development server
 
-1.  Run `yarn serve` to start the hot-reloading development server
+1.  Run `npm start` to start the hot-reloading development server
 
 1.  Open http://localhost:4200 to open the site in your favourite browser
 
 ## Build
 
-Run `yarn build` to build the project.
+Run `npm run build` to build the project.
 
 ## Built With
 

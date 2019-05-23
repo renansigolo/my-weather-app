@@ -9,7 +9,6 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "prettier": "prettier --config ./.prettierrc.json --write \"./**/*.{ts,js,json,scss}\"",
-    "update": "yarn upgrade-interactive --latest",
     "deploy": "ng build --prod && firebase deploy"
   },
   "private": true,
@@ -28,7 +27,7 @@
     "core-js": "^2.6.5",
     "hammerjs": "^2.0.8",
     "rxjs": "^6.4.0",
-    "tslib": "^1.9.0",
+    "tslib": "^1.9.3",
     "zone.js": "~0.8.29"
   },
   "devDependencies": {
@@ -52,5 +51,10 @@
     "ts-node": "~8.0.2",
     "tslint": "~5.12.1",
     "typescript": "~3.2.4"
+  },
+  "engines": {
+    "node": "~10.15.0",
+    "npm": ">= 6.5.0",
+    "yarn": "NO LONGER USED - Please use npm"
   }
 }
